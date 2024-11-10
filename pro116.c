@@ -3,49 +3,53 @@
 #include<string.h>
 int main()
 {
-    char str[50],findWord[50];
+    char str[50];
     int wordCount=0;
-    printf("Enter string : ");
+    printf("Enter string :");
     gets(str);
-    printf("Enter word to find : ");
-    gets(findWord);
-    int lenght=strlen(findWord);
-//    lenght--;
+
     for (int i = 0; str[i] != '\0'; i++)
     {
-        char substr[50];
-        if(str[i]==' ')
+        if ((str[i]=='i')&&(str[i-1]==' ')&&(str[i+1]=='s')&&(str[i+2]==' '))
         {
-            substr[i]='\0';
-            int sublen=strlen(substr);
-            // sublen--;
-            printf("%d\n",lenght);
-            printf("%d\n",sublen);
-            if (sublen==lenght)
-            {
-                //printf("check %d\n",i);
-                int check=0;
-                for (int j = 0; findWord[j] != '\0'; j++)
-                {
-                    if (findWord[j]==substr[j])
-                    {
-                        check++;
-                    }
-                }
-                if(check==lenght)
-                {
-                    wordCount++;
-                }   
-            }
-            
+            wordCount++;
         }
-        else
-        {
-            substr[i]=str[i];
-            
-        }
+        
     }
+   printf("Given word -- is -- appeared %d times in String",wordCount);
     
-    printf("Given word %s appeared %d times in String",findWord,wordCount);
+
+
+    // char findWord[50];
+    // char substr[50];
+    // int k=0;
+    // printf("Enter word to find :");
+    // gets(findWord);
+    // for (int i = 0; str[i] != '\0'; i++)
+    // {
+    //     if(str[i]==' ')
+    //     {
+    //         //substr[i]='\0';
+    //         printf("%s\n",substr);
+    //         int result =strcmp(substr,findWord);
+    //         //printf("%d\n",result);
+    //         if (result==0)
+    //         {
+    //             wordCount++;
+    //             //printf("%d",wordCount);
+    //         } 
+    //         k=0;
+    //     }
+    //     else
+    //     {
+    //         substr[k]=str[i];
+    //         k++;
+    //     }
+    // }
+    // substr[k] = '\0';
+    // if (strcmp(substr, findWord) == 0) {
+    //     wordCount++;
+    // }
+    // printf("Given word -- %s -- appeared %d times in String",findWord,wordCount); 
 return 0;
 }
