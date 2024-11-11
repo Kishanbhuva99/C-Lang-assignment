@@ -4,12 +4,13 @@
 #include<ctype.h>
 int main()
 {
-    //baki che -----------------------------------
+    
     char str[100],maxWord[100];
     int max=0;
     char word[100];
     int j=0;
-    fflush(stdin);
+    int len;
+    
     printf("Enter string :");
     gets(str);
 
@@ -18,11 +19,12 @@ int main()
         if (isspace(str[i]))
         {
             word[j]='\0';
-            int len=strlen(word);
+            len=strlen(word);
             if(len>=max)
             {
+                max=len;
                 strcpy(maxWord,word);
-                printf("%s--max\n",maxWord);
+                
             }
             j=0;
         }
@@ -32,12 +34,13 @@ int main()
             j++;
         } 
     }
-    // word[j]='\0';
-    // int len=strlen(word);
-    //         if(len>max)
-    //         {
-    //             strcpy(maxWord,word);
-    //         }
+    word[j]='\0';
+    len=strlen(word);
+            if(len>=max)
+            {
+                max=len;
+                strcpy(maxWord,word);
+            }
     printf("maximum characters --> %s\n",maxWord);
 return 0;
 }

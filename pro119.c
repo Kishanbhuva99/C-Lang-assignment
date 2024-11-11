@@ -4,11 +4,12 @@
 #include<ctype.h>
 int main()
 {
-    //baki che-------------------------------------------
+    
     char str[100],maxWord[100],minword[100];
-    int max=0,min=0;
+    int max=0,min=20;
     char word[100];
     int j=0;
+    int len;
     fflush(stdin);
     printf("Enter string :");
     gets(str);
@@ -18,16 +19,18 @@ int main()
         if (isspace(str[i]))
         {
             word[j]='\0';
-            int len=strlen(word);
+            len=strlen(word);
             if(len>=max)
             {
+                max=len;
                 strcpy(maxWord,word);
-                printf("%s--max\n",maxWord);
+                
             }
             if(len<=min)
             {
+                min=len;
                 strcpy(minword,word);
-                printf("%s--min\n",minword);
+            
 
             }
             j=0;
@@ -38,16 +41,18 @@ int main()
             j++;
         } 
     }
-    // word[j]='\0';
-    // int len=strlen(word);
-    //         if(len>max)
-    //         {
-    //             strcpy(maxWord,word);
-    //         }
-    //         else if(len<max)
-    //         {
-    //             strcpy(minword,word);
-    //         }
+    word[j]='\0';
+    len=strlen(word);
+            if(len>=max)
+            {
+                max=len;
+                strcpy(maxWord,word);
+            }
+            if(len<=min)
+            {
+                min=len;
+                strcpy(minword,word);
+            }
     printf("Largest Word --> %s\n",maxWord);
     printf("Smallest Word --> %s\n",minword);
 return 0;

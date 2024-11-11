@@ -4,11 +4,13 @@
 int palin()
 {
     int length,palin=1;
-    length=strlen(str);
-    length=length-1;
-    for (int i = 0; str[i] < str[length]; i++)
+    char revstr[50];
+    strcpy(revstr,str);
+    strrev(revstr);
+    //aprintf("%s",revstr);
+    for (int i = 0; str[i]!='\0'; i++)
     {
-        if(str[i]!=str[length])
+        if(str[i]!=revstr[i])
         {
             palin=0;
         }

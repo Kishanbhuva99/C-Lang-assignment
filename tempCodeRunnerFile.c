@@ -1,4 +1,6 @@
-for (int i = 0; str[i] != '\0'; i++)
-    // {
-        
-    // }
+ word[j]='\0';
+    int len=strlen(word);
+            if(len>max)
+            {
+                strcpy(maxWord,word);
+      
